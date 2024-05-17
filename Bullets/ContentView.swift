@@ -9,28 +9,18 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Bullet.createdAt) private var bullets: [Bullet]
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(bullets) { bullet in
-                    HStack {
-                        Text(bullet.text)
-                        Spacer()
-                        Text(bullet.createdAt, format: .dateTime.month().day().year())
-                    }
+        TabView {
+            BulletInput()
+                .tabItem {
+                    Label("New Bullet", systemImage: "plus.circle.dashed")
                 }
-            }
-            .navigationTitle("Bullets")
-            .toolbar {
-                ToolbarItem {
-                    Button("Add Bullet", systemImage: "plus") {
-                        modelContext.insert(Bullet(text: "New Bullet", createdAt: .now))
-                    }
+            
+            BulletList()
+                .tabItem {
+                    Label("Bullets", systemImage: "square.and.pencil.circle.fill")
                 }
-            }
         }
     }
 }

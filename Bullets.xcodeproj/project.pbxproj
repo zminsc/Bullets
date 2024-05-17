@@ -15,6 +15,8 @@
 		B198B3B02BF81A45000BCFC9 /* BulletsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3AF2BF81A45000BCFC9 /* BulletsUITests.swift */; };
 		B198B3B22BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3B12BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift */; };
 		B198B3BF2BF81B2E000BCFC9 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */; };
+		B198B3C12BF820A5000BCFC9 /* BulletInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3C02BF820A5000BCFC9 /* BulletInput.swift */; };
+		B198B3C32BF820B5000BCFC9 /* BulletList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3C22BF820B5000BCFC9 /* BulletList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		B198B3AF2BF81A45000BCFC9 /* BulletsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletsUITests.swift; sourceTree = "<group>"; };
 		B198B3B12BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		B198B3C02BF820A5000BCFC9 /* BulletInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletInput.swift; sourceTree = "<group>"; };
+		B198B3C22BF820B5000BCFC9 /* BulletList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				B198B3942BF81A44000BCFC9 /* BulletsApp.swift */,
 				B198B3962BF81A44000BCFC9 /* ContentView.swift */,
+				B198B3C02BF820A5000BCFC9 /* BulletInput.swift */,
+				B198B3C22BF820B5000BCFC9 /* BulletList.swift */,
 				B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */,
 				B198B3982BF81A45000BCFC9 /* Assets.xcassets */,
 				B198B39A2BF81A45000BCFC9 /* Preview Content */,
@@ -260,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B198B3C12BF820A5000BCFC9 /* BulletInput.swift in Sources */,
+				B198B3C32BF820B5000BCFC9 /* BulletList.swift in Sources */,
 				B198B3972BF81A44000BCFC9 /* ContentView.swift in Sources */,
 				B198B3952BF81A44000BCFC9 /* BulletsApp.swift in Sources */,
 				B198B3BF2BF81B2E000BCFC9 /* Bullet.swift in Sources */,
