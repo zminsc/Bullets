@@ -14,6 +14,7 @@
 		B198B3A62BF81A45000BCFC9 /* BulletsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3A52BF81A45000BCFC9 /* BulletsTests.swift */; };
 		B198B3B02BF81A45000BCFC9 /* BulletsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3AF2BF81A45000BCFC9 /* BulletsUITests.swift */; };
 		B198B3B22BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3B12BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift */; };
+		B198B3BF2BF81B2E000BCFC9 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B198B3AB2BF81A45000BCFC9 /* BulletsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BulletsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B198B3AF2BF81A45000BCFC9 /* BulletsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletsUITests.swift; sourceTree = "<group>"; };
 		B198B3B12BF81A45000BCFC9 /* BulletsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				B198B3942BF81A44000BCFC9 /* BulletsApp.swift */,
 				B198B3962BF81A44000BCFC9 /* ContentView.swift */,
+				B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */,
 				B198B3982BF81A45000BCFC9 /* Assets.xcassets */,
 				B198B39A2BF81A45000BCFC9 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				B198B3972BF81A44000BCFC9 /* ContentView.swift in Sources */,
 				B198B3952BF81A44000BCFC9 /* BulletsApp.swift in Sources */,
+				B198B3BF2BF81B2E000BCFC9 /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

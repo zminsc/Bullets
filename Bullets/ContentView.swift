@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var bullets = [Bullet]()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(bullets, id:\.text) { bullet in
+                    HStack {
+                        Text(bullet.text)
+                        Spacer()
+                        Text(bullet.createdAt, format: .dateTime.month().day().year())
+                    }
+                }
+            }
+            .navigationTitle("Bullets")
+            .toolbar {
+                ToolbarItem {
+                    Button("Add Bullet", systemImage: "plus") {
+                        bullets.append(Bullet(text: "New Bullet", createdAt: .now))
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
