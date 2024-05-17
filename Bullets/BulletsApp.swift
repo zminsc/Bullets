@@ -12,6 +12,7 @@ struct BulletsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: Bullet.self)
         }
     }
 }

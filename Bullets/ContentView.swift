@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @State private var bullets = [Bullet]()
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Bullet.createdAt) private var bullets: [Bullet]
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(bullets, id:\.text) { bullet in
+                ForEach(bullets) { bullet in
                     HStack {
                         Text(bullet.text)
                         Spacer()
@@ -25,7 +27,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem {
                     Button("Add Bullet", systemImage: "plus") {
-                        bullets.append(Bullet(text: "New Bullet", createdAt: .now))
+                        modelContext.insert(Bullet(text: "New Bullet", createdAt: .now))
                     }
                 }
             }
@@ -35,4 +37,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(for: Bullet.self, inMemory: true)
 }

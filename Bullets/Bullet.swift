@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Bullet {
-    let text: String
-    let createdAt: Date
+@Model
+final class Bullet {
+    var text: String
+    var createdAt: Date
+    
+    init(text: String, createdAt: Date) {
+        self.text = text
+        self.createdAt = createdAt
+    }
 }
