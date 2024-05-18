@@ -12,6 +12,7 @@ import SwiftData
 final class Bullet {
     var text: String
     var createdAt: Date
+    var isChecked: Bool = false
     
     init(text: String, createdAt: Date = .now) {
         self.text = text

@@ -20,7 +20,17 @@ struct BulletList: View {
                         ForEach(sortedGroupedBullets, id: \.key) { date, bulletsForDate in
                             Section(header: Text(date, format: .dateTime.month().day().year())) {
                                 ForEach(bulletsForDate) { bullet in
-                                    Text(bullet.text)
+                                    Button {
+                                        bullet.isChecked = !bullet.isChecked
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: bullet.isChecked ? "circle.dashed.inset.filled" : "circle.dashed")
+                                            Text(bullet.text)
+                                                .strikethrough(bullet.isChecked)
+                                                .foregroundStyle(bullet.isChecked ? .gray : .black)
+                                        }
+                                    }
+                                    .foregroundStyle(.black)
                                 }
                                 .onDelete(perform: { offsets in
                                     deleteBullets(offsets: offsets, bulletsForDate: bulletsForDate)
