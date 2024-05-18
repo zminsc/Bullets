@@ -14,14 +14,22 @@ struct BulletList: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(groupedBullets.keys.sorted(by: >), id: \.self) { date in
-                    Section(header: Text(date, format: .dateTime.month().day().year())) {
-                        ForEach(groupedBullets[date]?.sorted { firstBullet, secondBullet in
-                            firstBullet.createdAt < secondBullet.createdAt
-                        } ?? []) { bullet in
-                            Text(bullet.text)
+            Group {
+                if !bullets.isEmpty {
+                    List {
+                        ForEach(groupedBullets.keys.sorted(by: >), id: \.self) { date in
+                            Section(header: Text(date, format: .dateTime.month().day().year())) {
+                                ForEach(groupedBullets[date]?.sorted { firstBullet, secondBullet in
+                                    firstBullet.createdAt < secondBullet.createdAt
+                                } ?? []) { bullet in
+                                    Text(bullet.text)
+                                }
+                            }
                         }
+                    }
+                } else {
+                    ContentUnavailableView  {
+                        Label("No Bullets", systemImage: "square.and.pencil.circle.fill")
                     }
                 }
             }
@@ -39,4 +47,9 @@ struct BulletList: View {
 #Preview {
     BulletList()
         .modelContainer(SampleData.shared.modelContainer)
+}
+
+#Preview("No Bullets") {
+    BulletList()
+        .modelContainer(for: Bullet.self, inMemory: true)
 }

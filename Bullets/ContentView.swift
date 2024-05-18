@@ -29,3 +29,8 @@ struct ContentView: View {
     ContentView()
         .modelContainer(SampleData.shared.modelContainer)
 }
+
+#Preview("No Bullets") {
+    ContentView()
+        .modelContainer(for: Bullet.self, inMemory: true)
+}
