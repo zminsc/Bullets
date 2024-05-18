@@ -17,13 +17,14 @@ struct BulletList: View {
             Group {
                 if !bullets.isEmpty {
                     List {
-                        ForEach(groupedBullets.keys.sorted(by: >), id: \.self) { date in
+                        ForEach(sortedGroupedBullets, id: \.key) { date, bulletsForDate in
                             Section(header: Text(date, format: .dateTime.month().day().year())) {
-                                ForEach(groupedBullets[date]?.sorted { firstBullet, secondBullet in
-                                    firstBullet.createdAt < secondBullet.createdAt
-                                } ?? []) { bullet in
+                                ForEach(bulletsForDate) { bullet in
                                     Text(bullet.text)
                                 }
+                                .onDelete(perform: { offsets in
+                                    deleteBullets(offsets: offsets, bulletsForDate: bulletsForDate)
+                                })
                             }
                         }
                     }
@@ -34,12 +35,36 @@ struct BulletList: View {
                 }
             }
             .navigationTitle("Bullets")
+            .toolbar {
+                ToolbarItem {
+                    EditButton()
+                }
+            }
         }
     }
     
     private var groupedBullets: [Date: [Bullet]] {
         Dictionary(grouping: bullets) { bullet in
             Calendar.current.startOfDay(for: bullet.createdAt)
+        }
+        .mapValues { bulletsForDate in
+            bulletsForDate.sorted {
+                $0.createdAt < $1.createdAt
+            }
+        }
+    }
+    
+    private var sortedGroupedBullets: [(key: Date, value: [Bullet])] {
+        groupedBullets.sorted(by: {
+            $0.key > $1.key
+        })
+    }
+    
+    private func deleteBullets(offsets: IndexSet, bulletsForDate: [Bullet]) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(bulletsForDate[index])
+            }
         }
     }
 }
