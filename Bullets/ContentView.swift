@@ -27,5 +27,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Bullet.self, inMemory: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }

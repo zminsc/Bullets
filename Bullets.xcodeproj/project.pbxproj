@@ -17,6 +17,7 @@
 		B198B3BF2BF81B2E000BCFC9 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */; };
 		B198B3C12BF820A5000BCFC9 /* BulletInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3C02BF820A5000BCFC9 /* BulletInput.swift */; };
 		B198B3C32BF820B5000BCFC9 /* BulletList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198B3C22BF820B5000BCFC9 /* BulletList.swift */; };
+		B1F927BA2BF849AE00369C4B /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F927B92BF849AE00369C4B /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		B198B3C02BF820A5000BCFC9 /* BulletInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletInput.swift; sourceTree = "<group>"; };
 		B198B3C22BF820B5000BCFC9 /* BulletList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletList.swift; sourceTree = "<group>"; };
+		B1F927B92BF849AE00369C4B /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				B198B3962BF81A44000BCFC9 /* ContentView.swift */,
 				B198B3C02BF820A5000BCFC9 /* BulletInput.swift */,
 				B198B3C22BF820B5000BCFC9 /* BulletList.swift */,
+				B1F927B92BF849AE00369C4B /* SampleData.swift */,
 				B198B3BE2BF81B2E000BCFC9 /* Bullet.swift */,
 				B198B3982BF81A45000BCFC9 /* Assets.xcassets */,
 				B198B39A2BF81A45000BCFC9 /* Preview Content */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B198B3C12BF820A5000BCFC9 /* BulletInput.swift in Sources */,
+				B1F927BA2BF849AE00369C4B /* SampleData.swift in Sources */,
 				B198B3C32BF820B5000BCFC9 /* BulletList.swift in Sources */,
 				B198B3972BF81A44000BCFC9 /* ContentView.swift in Sources */,
 				B198B3952BF81A44000BCFC9 /* BulletsApp.swift in Sources */,

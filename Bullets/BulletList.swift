@@ -38,4 +38,5 @@ struct BulletList: View {
 
 #Preview {
     BulletList()
+        .modelContainer(SampleData.shared.modelContainer)
 }
