@@ -15,15 +15,23 @@ struct BulletList: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(bullets) { bullet in
-                    HStack {
-                        Text(bullet.text)
-                        Spacer()
-                        Text(bullet.createdAt, format: .dateTime.month().day().year())
+                ForEach(groupedBullets.keys.sorted(by: >), id: \.self) { date in
+                    Section(header: Text(date, format: .dateTime.month().day().year())) {
+                        ForEach(groupedBullets[date]?.sorted { firstBullet, secondBullet in
+                            firstBullet.createdAt < secondBullet.createdAt
+                        } ?? []) { bullet in
+                            Text(bullet.text)
+                        }
                     }
                 }
             }
             .navigationTitle("Bullets")
+        }
+    }
+    
+    private var groupedBullets: [Date: [Bullet]] {
+        Dictionary(grouping: bullets) { bullet in
+            Calendar.current.startOfDay(for: bullet.createdAt)
         }
     }
 }
